@@ -10,10 +10,23 @@
   </section>
   <section>
     <p>Coaches List</p>
-    <ul>
-      <li>Coach 1</li>
-      <li>Coach 2</li>
-      <li>Coach 3</li>
+    <ul v-for="coach in coaches" :key="coach.id">
+      <li>{{ coach.firstName }} {{ coach.lastName }}</li>
     </ul>
+    <p v-if="!hasCoaches">No coaches found. Please register as a coach!</p>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'CoachesList',
+  computed: {
+    coaches() {
+      return this.$store.getters['coaches/coaches'];
+    },
+    hasCoaches() {
+      return this.$store.getters['coaches/hasCoaches'];
+    },
+  },
+};
+</script>

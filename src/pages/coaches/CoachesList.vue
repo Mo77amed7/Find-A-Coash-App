@@ -16,6 +16,7 @@
       <coach-item
         v-for="coach in coaches"
         :key="coach.id"
+        :id="coach.id"
         :first-name="coach.firstName"
         :last-name="coach.lastName"
         :hourly-rate="coach.hourlyRate"

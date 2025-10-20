@@ -3,21 +3,25 @@
     <p>Filter</p>
   </section>
   <section>
-    <div class="controls">
-      <button>Refresh</button>
-      <button>Register As A Coach</button>
-    </div>
+    <based-card>
+      <div class="controls">
+        <based-button mode="flat">Refresh</based-button>
+        <based-button link to="/register">Register As A Coach</based-button>
+      </div></based-card
+    >
   </section>
   <section>
     <p>Coaches List</p>
-    <coach-item
-      v-for="coach in coaches"
-      :key="coach.id"
-      :first-name="coach.firstName"
-      :last-name="coach.lastName"
-      :hourly-rate="coach.hourlyRate"
-      :areas="coach.areas"
-    ></coach-item>
+    <div class="coach-list">
+      <coach-item
+        v-for="coach in coaches"
+        :key="coach.id"
+        :first-name="coach.firstName"
+        :last-name="coach.lastName"
+        :hourly-rate="coach.hourlyRate"
+        :areas="coach.areas"
+      ></coach-item>
+    </div>
     <p v-if="!hasCoaches">No coaches found. Please register as a coach!</p>
   </section>
 </template>
@@ -41,16 +45,22 @@ export default {
 </script>
 
 <style scoped>
-.coach-item {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0;
-  text-align: center;
+.based-card {
+  width:fit-content;
+  padding: 8px; 
+  border-radius: 0px !important;
 }
+.coach-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .controls {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
   margin-bottom: 16px;
 }
 </style>

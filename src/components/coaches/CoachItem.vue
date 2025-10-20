@@ -1,19 +1,29 @@
 <template>
   <div class="coach-item">
-    <li>
-      <h2 class="coach-name">{{ fullName }}</h2>
-      <p class="rate">{{ rate }}</p>
-      <span v-for="area in areas" :key="area">{{ area }}</span>
-      <div class="controls">
-        <router-link :to="coachContactLink">Contact</router-link>
-        <router-link :to="viewDetailsLink">View Details</router-link>
-      </div>
-    </li>
+    <based-card>
+      <li>
+        <h2 class="coach-name">{{ fullName }}</h2>
+        <p class="rate">{{ rate }}</p>
+        <based-badge
+          v-for="area in areas"
+          :key="area"
+          :type="area"
+          :title="area"
+        ></based-badge>
+        <div class="controls">
+          <BasedButton mode="flat" :to="coachContactLink" link>
+            Contact
+          </BasedButton>
+          <BasedButton :to="viewDetailsLink" link> View Details </BasedButton>
+        </div>
+      </li>
+    </based-card>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'CoachItem',
   props: ['id', 'firstName', 'lastName', 'areas', 'description', 'hourlyRate'],
   computed: {
     fullName() {
@@ -34,18 +44,8 @@ export default {
 
 <style scoped>
 .coach-item {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0;
-  text-align: center;
+  width: 32%;
 }
-
-.coach-image {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
 .coach-name {
   font-size: 1.5em;
   margin: 12px 0;
@@ -55,17 +55,24 @@ export default {
   font-size: 1.2em;
   color: #666;
 }
-
+.controls {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
 .details-button {
-  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
-
-.details-button:hover {
-  background-color: #0056b3;
+li {
+  list-style: none;
+  padding: 16px;
+  margin: 0;
 }
 </style>

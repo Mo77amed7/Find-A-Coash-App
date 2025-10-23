@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .coach-item {
-  width: 32%;
+  width: 100%;
 }
 .coach-name {
   font-size: 1.5em;

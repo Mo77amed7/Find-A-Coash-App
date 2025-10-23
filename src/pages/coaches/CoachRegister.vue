@@ -9,15 +9,17 @@
 
 <script>
 import CoachForm from '@/components/coaches/CoachForm.vue';
+import { nextTick } from 'vue';
 export default {
   name: 'CoachRegister',
   components: {
     CoachForm,
   },
   methods: {
-    onSaveCoachData(coachData) {
+    async onSaveCoachData(coachData) {
       this.$store.dispatch('coaches/registerCoach', coachData);
-      console.log(coachData);
+
+      await nextTick();
       this.$router.replace('/coaches');
     },
   },

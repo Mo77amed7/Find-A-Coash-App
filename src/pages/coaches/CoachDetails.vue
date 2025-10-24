@@ -45,7 +45,7 @@ export default {
       return this.selectedCoach.hourlyRate + ' USD/hr';
     },
     contactLink() {
-      return this.$route.path + '/contact';
+      return `/coaches/${this.$route.params.id}/contact`;
     },
     areas() {
       return this.selectedCoach.areas;

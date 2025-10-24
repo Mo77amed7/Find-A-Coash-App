@@ -9,13 +9,16 @@
           <based-button mode="flat" @click="refreshCoaches"
             >Refresh</based-button
           >
-          <based-button v-if="!isCoach" link to="/register"
+          <based-button v-if="!isCoach && !isLoading" link to="/register"
             >Register As A Coach</based-button
           >
         </div>
       </section>
       <section>
-        <div class="coach-list">
+        <div v-if="isLoading">
+          <base-spinner></base-spinner>
+        </div>
+        <div class="coach-list" v-else-if="hasCoaches">
           <coach-item
             v-for="coach in coaches"
             :key="coach.id"
@@ -26,7 +29,7 @@
             :areas="coach.areas"
           ></coach-item>
         </div>
-        <p v-if="!hasCoaches">No coaches found. Please register as a coach!</p>
+        <p v-else>No coaches found. Please register as a coach!</p>
       </section>
     </based-card>
   </based-card>
@@ -39,6 +42,7 @@ export default {
   name: 'CoachesList',
   data() {
     return {
+      isLoading: false,
       isActive: {
         frontend: true,
         backend: true,
@@ -66,19 +70,21 @@ export default {
       });
     },
     hasCoaches() {
-      return this.$store.getters['coaches/hasCoaches'];
+      return !this.isLoading && this.$store.getters['coaches/hasCoaches'];
     },
   },
   methods: {
     onFilterCoaches(updateFilters) {
       this.isActive = { ...updateFilters };
     },
-    refreshCoaches() {
-      this.$store.dispatch('coaches/loadCoaches');
+    async refreshCoaches() {
+      this.isLoading = true;
+      await this.$store.dispatch('coaches/loadCoaches');
+      this.isLoading = false;
     },
   },
   created() {
-    this.$store.dispatch('coaches/loadCoaches');
+    this.refreshCoaches();
   },
 };
 </script>
@@ -90,12 +96,6 @@ export default {
   border-radius: 0px !important;
   margin: 16px auto;
 }
-.coach-list {
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
-}
-
 .controls {
   display: flex;
   justify-content: space-between;

@@ -9,9 +9,13 @@ const store = createStore({
   },
   state() {
     return {
-      userId: 'c1',
-      didAutoLogout: false,
+      userId: 'c4',
     };
-  }
+  },
+  getters: {
+    userId(state) {
+      return state.userId;
+    },
+  },
 });
 export default store;

@@ -6,7 +6,9 @@
     <based-card>
       <section>
         <div class="controls">
-          <based-button mode="flat">Refresh</based-button>
+          <based-button mode="flat" @click="refreshCoaches"
+            >Refresh</based-button
+          >
           <based-button v-if="!isCoach" link to="/register"
             >Register As A Coach</based-button
           >
@@ -71,6 +73,12 @@ export default {
     onFilterCoaches(updateFilters) {
       this.isActive = { ...updateFilters };
     },
+    refreshCoaches() {
+      this.$store.dispatch('coaches/loadCoaches');
+    },
+  },
+  created() {
+    this.$store.dispatch('coaches/loadCoaches');
   },
 };
 </script>

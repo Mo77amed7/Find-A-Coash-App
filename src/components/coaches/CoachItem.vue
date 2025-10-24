@@ -11,7 +11,7 @@
           :title="area"
         ></based-badge>
         <div class="controls">
-          <BasedButton mode="flat" :to="coachContactLink" link>
+          <BasedButton mode="flat" :to="`/coaches/${id}/contact`" link>
             Contact
           </BasedButton>
           <BasedButton :to="viewDetailsLink" link> View Details </BasedButton>
@@ -31,9 +31,6 @@ export default {
     },
     rate() {
       return `$${this.hourlyRate}/hr`;
-    },
-    coachContactLink() {
-      return `/coaches/${this.id}/contact`;
     },
     viewDetailsLink() {
       return `/coaches/${this.id}`;

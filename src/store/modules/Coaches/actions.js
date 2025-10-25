@@ -18,24 +18,25 @@ export default {
         },
       }
     );
-
+    const responseData = await response.json();
     if (!response.ok) {
-      const error = await response.json();
-      console.error('Error registering coach:', error);
-      return;
+      const error = new Error(
+        responseData.message || 'Failed to register coach.'
+      );
+      throw error;
     }
-
     context.commit('addCoach', { ...newCoach, id: coachId });
   },
   async loadCoaches(context) {
     const response = await fetch(
       'https://find-a-coach-dc797-default-rtdb.firebaseio.com/coaches.json'
     );
-
+    const responseData = await response.json();
     if (!response.ok) {
-      const error = await response.json();
-      console.error('Error loading coaches:', error);
-      return;
+      const error = new Error(
+        responseData.message || 'Failed to load coaches.'
+      );
+      throw error;
     }
 
     const data = await response.json();

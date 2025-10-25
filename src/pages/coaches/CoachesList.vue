@@ -1,4 +1,7 @@
 <template>
+  <base-dialog @close="handleError" :show="!!error" title="An error occurred">
+    <p>{{ error }}</p>
+  </base-dialog>
   <based-card>
     <section>
       <filter-coaches @filter-coaches="onFilterCoaches"></filter-coaches>
@@ -42,6 +45,7 @@ export default {
   name: 'CoachesList',
   data() {
     return {
+      error: null,
       isLoading: false,
       isActive: {
         frontend: true,
@@ -79,8 +83,15 @@ export default {
     },
     async refreshCoaches() {
       this.isLoading = true;
-      await this.$store.dispatch('coaches/loadCoaches');
+      try {
+        await this.$store.dispatch('coaches/loadCoaches');
+      } catch (error) {
+        this.error = error.message || 'Failed to fetch coaches.';
+      }
       this.isLoading = false;
+    },
+    handleError() {
+      this.error = null;
     },
   },
   created() {

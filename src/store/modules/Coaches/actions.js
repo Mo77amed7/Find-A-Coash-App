@@ -38,8 +38,7 @@ export default {
       );
       throw error;
     }
-
-    const data = await response.json();
+    const data = responseData || {};
     const coaches = [];
 
     for (const key in data) {

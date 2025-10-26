@@ -1,41 +1,43 @@
 <template>
-  <base-dialog @close="handleError" :show="!!error" title="An error occurred">
-    <p>{{ error }}</p>
-  </base-dialog>
-  <based-card>
-    <section>
-      <filter-coaches @filter-coaches="onFilterCoaches"></filter-coaches>
-    </section>
+  <div>
+    <base-dialog @close="handleError" :show="!!error" title="An error occurred">
+      <p>{{ error }}</p>
+    </base-dialog>
     <based-card>
       <section>
-        <div class="controls">
-          <based-button mode="flat" @click="refreshCoaches"
-            >Refresh</based-button
-          >
-          <based-button v-if="!isCoach && !isLoading" link to="/register"
-            >Register As A Coach</based-button
-          >
-        </div>
+        <filter-coaches @filter-coaches="onFilterCoaches"></filter-coaches>
       </section>
-      <section>
-        <div v-if="isLoading">
-          <base-spinner></base-spinner>
-        </div>
-        <div class="coach-list" v-else-if="hasCoaches">
-          <coach-item
-            v-for="coach in coaches"
-            :key="coach.id"
-            :id="coach.id"
-            :first-name="coach.firstName"
-            :last-name="coach.lastName"
-            :hourly-rate="coach.hourlyRate"
-            :areas="coach.areas"
-          ></coach-item>
-        </div>
-        <p v-else>No coaches found. Please register as a coach!</p>
-      </section>
+      <based-card>
+        <section>
+          <div class="controls">
+            <based-button mode="flat" @click="refreshCoaches"
+              >Refresh</based-button
+            >
+            <based-button v-if="!isCoach && !isLoading" link to="/register"
+              >Register As A Coach</based-button
+            >
+          </div>
+        </section>
+        <section>
+          <div v-if="isLoading">
+            <base-spinner></base-spinner>
+          </div>
+          <div class="coach-list" v-else-if="hasCoaches">
+            <coach-item
+              v-for="coach in coaches"
+              :key="coach.id"
+              :id="coach.id"
+              :first-name="coach.firstName"
+              :last-name="coach.lastName"
+              :hourly-rate="coach.hourlyRate"
+              :areas="coach.areas"
+            ></coach-item>
+          </div>
+          <p v-else>No coaches found. Please register as a coach!</p>
+        </section>
+      </based-card>
     </based-card>
-  </based-card>
+  </div>
 </template>
 
 <script>

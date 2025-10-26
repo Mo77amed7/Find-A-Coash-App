@@ -1,7 +1,11 @@
 <template>
   <div>
     <the-header></the-header>
-    <router-view />
+    <router-view v-slot="slotProps">
+      <transition name="fade" mode="out-in">
+        <component :is="slotProps.Component"></component>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -28,5 +32,13 @@ html {
 
 body {
   margin: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

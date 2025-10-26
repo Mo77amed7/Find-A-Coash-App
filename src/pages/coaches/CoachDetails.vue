@@ -1,31 +1,33 @@
 <template>
-  <section>
-    <based-card>
-      <h2>{{ fullName }}</h2>
-      <p>{{ rate }}</p>
-    </based-card>
-  </section>
-  <section>
-    <based-card>
-      <header>
-        <h3>Interested! Reach out Now</h3>
-        <based-button link :to="contactLink">contact</based-button>
-      </header>
-    </based-card>
-    <router-view></router-view>
-  </section>
-  <section>
-    <based-card>
-      <based-badge
-        v-for="area in areas"
-        :key="area"
-        :type="area"
-        :title="area"
-        >{{ area }}</based-badge
-      >
-      <p>{{ description }}</p>
-    </based-card>
-  </section>
+  <div v-if="selectedCoach">
+    <section>
+      <based-card>
+        <h2>{{ fullName }}</h2>
+        <p>{{ rate }}</p>
+      </based-card>
+    </section>
+    <section>
+      <based-card>
+        <header>
+          <h3>Interested! Reach out Now</h3>
+          <based-button link :to="contactLink">contact</based-button>
+        </header>
+      </based-card>
+      <router-view></router-view>
+    </section>
+    <section>
+      <based-card>
+        <based-badge
+          v-for="area in areas"
+          :key="area"
+          :type="area"
+          :title="area"
+          >{{ area }}</based-badge
+        >
+        <p>{{ description }}</p>
+      </based-card>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -58,6 +60,9 @@ export default {
     this.selectedCoach = this.$store.getters['coaches/coaches'].find(
       (coach) => coach.id === this.id
     );
+    if (!this.selectedCoach) {
+      this.$router.replace('/not-found');
+    }
   },
 };
 </script>

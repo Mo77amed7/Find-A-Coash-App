@@ -1,8 +1,12 @@
 <template>
+  <base-dialog :show="!!error" @close="handleError" title="An Error Occurred">
+    <p>{{ error }}</p>
+  </base-dialog>
   <based-card>
     <section>
       <h1>Requests Received</h1>
-      <ul>
+      <base-spinner v-if="isLoading" />
+      <ul v-if="hasRequests && !isLoading">
         <request-item
           v-for="request in requests"
           :key="request.id"
@@ -11,7 +15,7 @@
           :message="request.message"
         ></request-item>
       </ul>
-      <p v-if="!hasRequests">No requests received yet.</p>
+      <p v-else>No requests received yet.</p>
     </section>
   </based-card>
 </template>
@@ -21,7 +25,13 @@ import RequestItem from '@/components/requests/RequestItem.vue';
 export default {
   name: 'RequestReceive',
   components: {
-    RequestItem
+    RequestItem,
+  },
+  data() {
+    return {
+      error: null,
+      isLoading: true,
+    };
   },
   computed: {
     requests() {
@@ -30,6 +40,23 @@ export default {
     hasRequests() {
       return this.$store.getters['requests/hasRequests'];
     },
+  },
+  methods: {
+    async loadRequests() {
+      this.isLoading = true;
+      try {
+        await this.$store.dispatch('requests/fetchRequests');
+      } catch (error) {
+        this.error = error.message || 'Failed to fetch requests.';
+      }
+      this.isLoading = false;
+    },
+    handleError() {
+      this.error = null;
+    },
+  },
+  created() {
+    this.loadRequests();
   },
 };
 </script>
@@ -47,5 +74,4 @@ ul {
 p {
   text-align: center;
 }
-
 </style>

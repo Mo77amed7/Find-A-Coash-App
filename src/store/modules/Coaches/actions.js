@@ -8,8 +8,9 @@ export default {
       hourlyRate: data.Rate,
       areas: data.areas,
     };
+    const token = context.rootGetters.token;
     const response = await fetch(
-      `https://find-a-coach-dc797-default-rtdb.firebaseio.com/coaches/${coachId}.json`,
+      `https://find-a-coach-dc797-default-rtdb.firebaseio.com/coaches/${coachId}.json?auth=${token}`,
       {
         method: 'PUT',
         body: JSON.stringify(newCoach),

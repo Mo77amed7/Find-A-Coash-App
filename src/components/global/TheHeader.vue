@@ -4,7 +4,10 @@
       <h1><router-link to="/">Find A Coach</router-link></h1>
       <ul>
         <li><router-link to="/coaches">Coaches</router-link></li>
-        <li><router-link to="/requests">Requests</router-link></li>
+        <li v-if="isLoggedIn">
+          <router-link to="/requests">Requests</router-link>
+        </li>
+        <li v-else><router-link to="/authentication">Login</router-link></li>
       </ul>
     </nav>
   </header>
@@ -12,6 +15,11 @@
 <script>
 export default {
   name: 'TheHeader',
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
+  },
 };
 </script>
 

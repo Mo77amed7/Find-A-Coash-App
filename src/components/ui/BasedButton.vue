@@ -37,7 +37,8 @@ export default {
 </script>
 
 <style scoped>
-.button,a {
+.button,
+a {
   position: relative;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
@@ -63,17 +64,13 @@ export default {
   transition: all 0.3s ease-in-out;
 }
 
-.button:hover,a:hover {
+.button:hover,
+a:hover {
   transform: scale(1.05);
-  border-color: #fff9;
 }
 
 .button:hover .icon {
   transform: translate(4px);
-}
-
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
 }
 
 .button::before {
@@ -92,19 +89,6 @@ export default {
   opacity: 0.6;
 }
 
-@keyframes shine {
-  0% {
-    left: -100px;
-  }
-
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 100%;
-  }
-}
 .flat {
   background-color: transparent;
   box-shadow: none;

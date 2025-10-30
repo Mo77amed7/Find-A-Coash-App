@@ -8,6 +8,7 @@ import ContactCoach from './pages/requests/ContactCoach.vue';
 import RequestReceived from './pages/requests/RequestReceive.vue';
 import UserAuth from './pages/auth/UserAuth.vue';
 import NotFound from './pages/NotFound.vue';
+import store from './store/index.js';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -20,11 +21,34 @@ const router = createRouter({
       component: CoachDetails,
       children: [{ path: 'contact', component: ContactCoach }],
     },
-    { path: '/register', component: CoachRegistration },
-    { path: '/requests', component: RequestReceived },
-    { path: '/authentication', component: UserAuth },
+    {
+      path: '/register',
+      component: CoachRegistration,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/requests',
+      component: RequestReceived,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/authentication',
+      component: UserAuth,
+      meta: { requiresUnAuth: true },
+    },
     { path: '/:notFound(.*)', component: NotFound },
   ],
+});
+
+router.beforeEach(function (to, _, next) {
+  const isAuth = store.getters.isAuthenticated;
+  if (to.meta.requiresAuth && !isAuth) {
+    next({ path: '/auth', query: { redirect: to.path.replace(/^\//, '') } });
+  } else if (to.meta.requiresUnauth && isAuth) {
+    next('/coaches');
+  } else {
+    next();
+  }
 });
 
 export default router;

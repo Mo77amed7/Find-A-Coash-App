@@ -4,17 +4,20 @@
       <p>{{ error }}</p>
     </base-dialog>
     <based-card>
-      <section>
-        <filter-coaches @filter-coaches="onFilterCoaches"></filter-coaches>
-      </section>
-      <based-card>
+      <filter-coaches @filter-coaches="onFilterCoaches"></filter-coaches>
+    </based-card>
+    <based-card>
+      <based-card class="coaches-list">
         <section>
           <div class="controls">
             <based-button mode="flat" @click="refreshCoaches"
               >Refresh</based-button
             >
-            <based-button link to="/authentication" v-if="!isLoggedIn"
-              >Login</based-button
+            <based-button
+              link
+              to="/authentication?redirect=register"
+              v-if="!isLoggedIn"
+              >Login To Register As A Coach</based-button
             >
             <based-button
               v-if="isLoggedIn && !isCoach && !isLoading"
@@ -113,16 +116,18 @@ export default {
 
 <style scoped>
 .based-card {
-  width: fit-content;
+  max-width: 700px;
   padding: 8px;
   border-radius: 0px !important;
   margin: 16px auto;
+}
+.coaches-list {
+  width: 100% !important;
 }
 .controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
   margin-bottom: 16px;
 }
 </style>

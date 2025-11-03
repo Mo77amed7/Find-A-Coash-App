@@ -20,11 +20,12 @@ Built with **Vue 3**, **Vue Router**, and **Vuex**, following best practices in 
 - Vuex  
 - Vue Router  
 - Firebase  
-- CSS
+- CSS  
 
 ---
 
 ## 📂 Project Setup
+
 To run this project locally:
 
 ```bash
@@ -32,21 +33,8 @@ To run this project locally:
 npm install
 
 # start development server
-npm run serve
-## 📸 Screenshots
-
-**Login & Signup Page**
-![Login And Signup Page](https://github.com/user-attachments/assets/935f3557-f793-4602-87ad-29ffccf77af2f)
-
-**Home Page**
-![Home Page](https://github.com/user-attachments/assets/dfbfe80e-3f17-49a3-9f78-f29c865231a8)
-
-**Contact Form**
-![Contact Form](https://github.com/user-attachments/assets/b89be065-17ab-495a-949a-bef1adee680e)
-
-**Coach Details Page**
-![Coach Details Page](https://github.com/user-attachments/assets/be720aaa-8224-4aab-ba11-2863b8a265bd)
-
-**Requests Page**
-![Requests Page](https://github.com/user-attachments/assets/6dff5217-ce56-4beb-a927-259675f88c3e)
-
+npm run serve<img width="1920" height="1039" alt="Contact Form" src="https://github.com/user-attachments/assets/ade4bd36-23e8-4a55-be6e-b28ee1533652" />
+<img width="1920" height="1032" alt="Coach Details Page" src="https://github.com/user-attachments/assets/71438792-a183-43bd-b9fb-c4491bcc4911" />
+<img width="1920" height="1031" alt="Requests Page" src="https://github.com/user-attachments/assets/32d96882-a78d-42b0-a445-bb96dc469981" />
+<img width="1918" height="1032" alt="Login And Signup Page" src="https://github.com/user-attachments/assets/baecd56f-99f4-4f75-a15f-a36e2cde442d" />
+<img width="1920" height="1027" alt="Home Page" src="https://github.com/user-attachments/assets/e74cf0db-4c34-45af-93fc-a625c78c050c" />

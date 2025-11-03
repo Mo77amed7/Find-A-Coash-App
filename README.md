@@ -37,12 +37,23 @@ npm run serve
 
 ---
 
-📸 Screenshots
-<img width="1920" height="1032" alt="Image" src="https://github.com/user-attachments/assets/30f0da82-7d9d-4b6b-99be-9a57adc2db9a" />
-<img width="1920" height="1039" alt="Image" src="https://github.com/user-attachments/assets/692958ae-608a-4560-b7ec-971a0785e7fb" />
-<img width="1920" height="1027" alt="Image" src="https://github.com/user-attachments/assets/8aa33871-4f82-40d3-a6ce-e9cfbc4dd498" />
-<img width="1918" height="1032" alt="Image" src="https://github.com/user-attachments/assets/876ab5a3-af03-45c1-8048-62965f2faf5c" />
-<img width="1920" height="1031" alt="Image" src="https://github.com/user-attachments/assets/667dd4b1-50fd-44ac-8745-2ef65a546f9e" />
+## 📸 Screenshots
+
+**Login & Signup Page**
+![Login And Signup Page](https://github.com/user-attachments/assets/935f3557-f793-4602-87ad-29ffccf77af2f)
+
+**Home Page**
+![Home Page](https://github.com/user-attachments/assets/dfbfe80e-3f17-49a3-9f78-f29c865231a8)
+
+**Contact Form**
+![Contact Form](https://github.com/user-attachments/assets/b89be065-17ab-495a-949a-bef1adee680e)
+
+**Coach Details Page**
+![Coach Details Page](https://github.com/user-attachments/assets/be720aaa-8224-4aab-ba11-2863b8a265bd)
+
+**Requests Page**
+![Requests Page](https://github.com/user-attachments/assets/6dff5217-ce56-4beb-a927-259675f88c3e)
+
 
 👨‍💻 Author
 Mohamed Ahmed – Frontend Developer

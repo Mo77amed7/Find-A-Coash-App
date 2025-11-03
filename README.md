@@ -35,6 +35,8 @@ npm install
 # start development server
 npm run serve
 
+---
+
 📸 Screenshots
 <img width="1920" height="1032" alt="Image" src="https://github.com/user-attachments/assets/30f0da82-7d9d-4b6b-99be-9a57adc2db9a" />
 <img width="1920" height="1039" alt="Image" src="https://github.com/user-attachments/assets/692958ae-608a-4560-b7ec-971a0785e7fb" />

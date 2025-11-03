@@ -1,0 +1,44 @@
+[debug] [2025-11-03T21:33:21.425Z] ----------------------------------------------------------------------
+[debug] [2025-11-03T21:33:21.428Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-11-03T21:33:21.428Z] CLI Version:   14.23.0
+[debug] [2025-11-03T21:33:21.428Z] Platform:      win32
+[debug] [2025-11-03T21:33:21.428Z] Node Version:  v22.11.0
+[debug] [2025-11-03T21:33:21.429Z] Time:          Mon Nov 03 2025 23:33:21 GMT+0200 (توقيت شرق أوروبا الرسمي)
+[debug] [2025-11-03T21:33:21.429Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Web\Udemy vue course\Assignments\main-prj-01-starting-setup
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2025-11-03T21:36:53.103Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-03T21:36:53.103Z] > authorizing via signed-in user (muhamedrashad99@gmail.com)
+[debug] [2025-11-03T21:36:53.104Z] Checked if tokens are valid: true, expires at: 1762209164772
+[debug] [2025-11-03T21:36:53.104Z] Checked if tokens are valid: true, expires at: 1762209164772
+[debug] [2025-11-03T21:36:53.105Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-11-03T21:36:53.724Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-11-03T21:36:53.724Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] 
+=== Hosting Setup
+[debug] [2025-11-03T21:36:58.509Z] Checked if tokens are valid: true, expires at: 1762209164772
+[debug] [2025-11-03T21:36:58.509Z] Checked if tokens are valid: true, expires at: 1762209164772
+[debug] [2025-11-03T21:36:58.510Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/find-a-coach-dc797 [none]
+[debug] [2025-11-03T21:36:58.768Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/find-a-coach-dc797 200
+[debug] [2025-11-03T21:36:58.768Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/find-a-coach-dc797 {"projectId":"find-a-coach-dc797","projectNumber":"65776354045","displayName":"Find A Coach","name":"projects/find-a-coach-dc797","resources":{"hostingSite":"find-a-coach-dc797","realtimeDatabaseInstance":"find-a-coach-dc797-default-rtdb"},"state":"ACTIVE","etag":"1_a8833d1f-b8d6-4290-a099-631a4a628081"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

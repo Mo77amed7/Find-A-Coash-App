@@ -39,20 +39,20 @@ npm run serve
 
 ## 📸 Screenshots
 
-**Login & Signup Page**
-![Login And Signup Page](https://github.com/user-attachments/assets/935f3557-f793-4602-87ad-29ffccf77af2f)
+Login & Signup Page
+(https://github.com/user-attachments/assets/935f3557-f793-4602-87ad-29ffccf77af2f)
 
-**Home Page**
-![Home Page](https://github.com/user-attachments/assets/dfbfe80e-3f17-49a3-9f78-f29c865231a8)
+Home Page
+(https://github.com/user-attachments/assets/dfbfe80e-3f17-49a3-9f78-f29c865231a8)
 
-**Contact Form**
-![Contact Form](https://github.com/user-attachments/assets/b89be065-17ab-495a-949a-bef1adee680e)
+Contact Form
+(https://github.com/user-attachments/assets/b89be065-17ab-495a-949a-bef1adee680e)
 
-**Coach Details Page**
-![Coach Details Page](https://github.com/user-attachments/assets/be720aaa-8224-4aab-ba11-2863b8a265bd)
+Coach Details Page
+(https://github.com/user-attachments/assets/be720aaa-8224-4aab-ba11-2863b8a265bd)
 
-**Requests Page**
-![Requests Page](https://github.com/user-attachments/assets/6dff5217-ce56-4beb-a927-259675f88c3e)
+Requests Page
+(https://github.com/user-attachments/assets/6dff5217-ce56-4beb-a927-259675f88c3e)
 
 
 👨‍💻 Author
